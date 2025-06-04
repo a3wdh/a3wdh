@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mother Name Guesser</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f4;
+        }
+        #app {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" placeholder="Your name">
+        <button id="guessBtn">Guess Mother Name</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        const motherNames = ["Mary", "Sarah", "Patricia", "Jennifer", "Linda", "Elizabeth", "Susan", "Jessica", "Karen", "Nancy"];
+        const button = document.getElementById('guessBtn');
+        const result = document.getElementById('result');
+        button.addEventListener('click', () => {
+            const userName = document.getElementById('username').value.trim();
+            if (!userName) {
+                result.textContent = 'Please enter your name.';
+                return;
+            }
+            const guess = motherNames[Math.floor(Math.random() * motherNames.length)];
+            result.textContent = `${userName}'s mother is named ${guess}!`;
+        });
+    </script>
+</body>
+</html>
