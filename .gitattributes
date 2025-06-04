@@ -1,0 +1,2 @@
+# Use custom textconv for binary files so diffs show hex output
+*.bin diff=hexdiff
