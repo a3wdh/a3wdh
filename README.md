@@ -17,6 +17,18 @@ git config diff.hexdiff.textconv "scripts/hexdiff.sh"
 After running that command, `git diff` will display hex dumps for binary files,
 making it easier to review their changes.
 
+## Comparing binary files
+
+For an immediate comparison of two binary files, use the helper script
+`scripts/bindiff.py`:
+
+```bash
+python scripts/bindiff.py old.bin new.bin
+```
+
+This prints a unified diff of the hex representation of both files, allowing you
+to inspect differences without needing additional tools.
+
 <!---
 a3wdh/a3wdh is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
